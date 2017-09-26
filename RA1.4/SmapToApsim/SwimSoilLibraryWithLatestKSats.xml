@@ -1,0 +1,1064 @@
+<folder version="36" creator="Apsim 7.7-r3690" name="Soils">
+  <Soil name="Otorohanga_57a1">
+    <RecordNumber>-1</RecordNumber>
+    <SoilType>Typic Orthic Allophanic Soils</SoilType>
+    <Latitude>-41</Latitude>
+    <Longitude>-82</Longitude>
+    <YearOfSampling>0</YearOfSampling>
+    <LayerStructure>
+      <Thickness>
+        <double>10.0</double>
+        <double>20.0</double>
+        <double>30.0</double>
+        <double>40.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>50.0</double>
+        <double>20.0</double>
+      </Thickness>
+    </LayerStructure>
+    <Water>
+      <Thickness>
+        <double>2000</double>
+      </Thickness>
+      <BD>
+        <double>0</double>
+      </BD>
+      <AirDry>
+        <double>0.259</double>
+      </AirDry>
+      <LL15>
+        <double>0.28</double>
+      </LL15>
+      <DUL>
+        <double>0.508</double>
+      </DUL>
+      <SAT>
+        <double>0.63891000000000009</double>
+      </SAT>
+      <KS>
+        <double>960</double>
+      </KS>
+      <SoilCrop name="Ryegrass_Clover">
+        <Thickness>
+          <double>2000</double>
+        </Thickness>
+        <LL>
+          <double>0.28</double>
+        </LL>
+        <KL>
+          <double>0.00018590641324997689</double>
+        </KL>
+        <XF>
+          <double>0.058894945909171818</double>
+        </XF>
+      </SoilCrop>
+    </Water>
+    <SoilOrganicMatter>
+      <RootCN>40</RootCN>
+      <RootWt>1000</RootWt>
+      <SoilCN>11</SoilCN>
+      <EnrACoeff>7.4</EnrACoeff>
+      <EnrBCoeff>0.2</EnrBCoeff>
+      <Thickness>
+        <double>10.0</double>
+        <double>20.0</double>
+        <double>30.0</double>
+        <double>40.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>50.0</double>
+        <double>20.0</double>
+      </Thickness>
+      <OC>
+        <double>4.7</double>
+        <double>3.2164402071603773</double>
+        <double>0.6082307898023562</double>
+        <double>0.2248245398934235</double>
+        <double>0.20003807614439786</double>
+        <double>0.2000000021975503</double>
+        <double>0.20000000000012685</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+      </OC>
+      <FBiom>
+        <double>0.06926545765453743</double>
+        <double>0.03409553695297617</double>
+        <double>0.015376441019179983</double>
+        <double>0.010658379763921602</double>
+        <double>0.010005102761754524</double>
+        <double>0.010000003378856008</double>
+        <double>0.010000000002237351</double>
+        <double>0.010000000000001482</double>
+        <double>0.010000000000000002</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+      </FBiom>
+      <FInert>
+        <double>0.5696460117874711</double>
+        <double>0.7255941819529867</double>
+        <double>0.8703798696770542</double>
+        <double>0.9546410233552938</double>
+        <double>0.9960067393670222</double>
+        <double>0.9998972433699422</double>
+        <double>0.9999973558137093</double>
+        <double>0.9999999319584426</double>
+        <double>0.9999999982491198</double>
+        <double>0.9999999999549454</double>
+        <double>0.9999999999988407</double>
+        <double>0.9999999999999702</double>
+        <double>0.9999999999999992</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+      </FInert>
+    </SoilOrganicMatter>
+    <Analysis>
+      <Thickness>
+        <double>2000.0</double>
+      </Thickness>
+      <Rocks>
+        <double>0.0</double>
+      </Rocks>
+      <PH>
+        <double>7.0</double>
+      </PH>
+      <CEC>
+        <double>19.26</double>
+      </CEC>
+      <ParticleSizeSand>
+        <double>45.0</double>
+      </ParticleSizeSand>
+      <ParticleSizeSilt>
+        <double>30.0</double>
+      </ParticleSizeSilt>
+      <ParticleSizeClay>
+        <double>25.0</double>
+      </ParticleSizeClay>
+    </Analysis>
+    <Sample name="Initial nitrogen">
+      <Thickness>
+        <double>2000.0</double>
+      </Thickness>
+      <NO3>
+        <double>20.0</double>
+      </NO3>
+      <NH4>
+        <double>2.9999999999999996</double>
+      </NH4>
+      <NO3Units>kgha</NO3Units>
+      <SWUnits>Volumetric</SWUnits>
+      <OCUnits>Total</OCUnits>
+      <PHUnits>Water</PHUnits>
+    </Sample>
+    <InitialWater name="Initial water">
+      <FractionFull>1</FractionFull>
+      <PercentMethod>FilledFromTop</PercentMethod>
+    </InitialWater>
+    <Swim>
+      <Salb type="text" description="Bare Soil Albedo">0.13</Salb>
+      <CN2Bare type="text" description="Bare Soil Runoff Curve Number">75</CN2Bare>
+      <CNRed type="text" description="Max. Reduction in Curve Number due to cover">20</CNRed>
+      <CNCov type="text" description="Cover for max Curve Number reduction">0.8</CNCov>
+      <KDul type="text" description="Hydraulic Conductivity at DUL (mm/d)">0.1</KDul>
+      <PSIDul type="text" description="Matric Potential at DUL (cm)">-100</PSIDul>
+      <VC type="list" listvalues="on,off" description="Vapour Conductivity Calculations (on/off)">true</VC>
+      <DTmin type="text" description="Minimum Timestep (min)">0.0</DTmin>
+      <DTmax type="text" description="Maximum Timestep (min)">1440.0</DTmax>
+      <MaxWaterIncrement type="text" description="Maximum Water Increment (mm)">10</MaxWaterIncrement>
+      <SpaceWeightingFactor type="text" description="Space Weighting Factor">0</SpaceWeightingFactor>
+      <SoluteSpaceWeightingFactor type="text" description="Solute Space Weighting Factor">0.0</SoluteSpaceWeightingFactor>
+      <Diagnostics type="yesno" description="Diagnostic Information?">false</Diagnostics>
+      <SwimSoluteParameters>
+        <Dis type="text" description="Dispersivity - dis ((cm^2/h)/(cm/h)^p) ">15</Dis>
+        <Disp type="text" description="Dispersivity Power - disp">1</Disp>
+        <A type="text" description="Tortuosity Constant - a">1.0</A>
+        <DTHC type="text" description="Tortuoisty Offset - dthc">0.0</DTHC>
+        <DTHP type="text" description="Tortuoisty Power - dthp">1.0</DTHP>
+        <WaterTableCl type="text" description="Water Table Cl Concentration (ppm)">0</WaterTableCl>
+        <WaterTableNO3 type="text" description="Water Table NO3 Concentration (ppm)">0.0</WaterTableNO3>
+        <WaterTableNH4 type="text" description="Water Table NH4 Concentration (ppm)">0.0</WaterTableNH4>
+        <WaterTableUrea type="text" description="Water Table Urea Concentration (ppm)">0.0</WaterTableUrea>
+        <Thickness>
+          <double>2000.0</double>
+        </Thickness>
+        <ThicknessUnits>mm</ThicknessUnits>
+        <NO3Exco>
+          <double>0.0</double>
+        </NO3Exco>
+        <NO3FIP>
+          <double>1.0</double>
+        </NO3FIP>
+        <NH4Exco>
+          <double>100.0</double>
+        </NH4Exco>
+        <NH4FIP>
+          <double>1.0</double>
+        </NH4FIP>
+        <UreaExco>
+          <double>0.0</double>
+        </UreaExco>
+        <UreaFIP>
+          <double>1.0</double>
+        </UreaFIP>
+        <ClExco>
+          <double>0.0</double>
+        </ClExco>
+        <ClFIP>
+          <double>1.0</double>
+        </ClFIP>
+      </SwimSoluteParameters>
+    </Swim>
+  </Soil>
+  <Soil name="Turangi_40a1">
+    <RecordNumber>-1</RecordNumber>
+    <SoilType>Typic Orthic Pumice Soils</SoilType>
+    <Latitude>-41</Latitude>
+    <Longitude>-82</Longitude>
+    <YearOfSampling>0</YearOfSampling>
+    <LayerStructure>
+      <Thickness>
+        <double>10.0</double>
+        <double>20.0</double>
+        <double>30.0</double>
+        <double>40.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>50.0</double>
+        <double>20.0</double>
+      </Thickness>
+    </LayerStructure>
+    <Water>
+      <Thickness>
+        <double>2000</double>
+      </Thickness>
+      <BD>
+        <double>1.1536</double>
+      </BD>
+      <AirDry>
+        <double>0.061975000000000009</double>
+      </AirDry>
+      <LL15>
+        <double>0.067</double>
+      </LL15>
+      <DUL>
+        <double>0.214</double>
+      </DUL>
+      <SAT>
+        <double>0.54684</double>
+      </SAT>
+      <KS>
+        <double>1920</double>
+      </KS>
+      <SoilCrop name="Ryegrass_Clover">
+        <Thickness>
+          <double>2000</double>
+        </Thickness>
+        <LL>
+          <double>0.067</double>
+        </LL>
+        <KL>
+          <double>0.00022308769589997226</double>
+        </KL>
+        <XF>
+          <double>0.022550455808510915</double>
+        </XF>
+      </SoilCrop>
+    </Water>
+    <SoilOrganicMatter>
+      <RootCN>40</RootCN>
+      <RootWt>1000</RootWt>
+      <SoilCN>11</SoilCN>
+      <EnrACoeff>7.4</EnrACoeff>
+      <EnrBCoeff>0.2</EnrBCoeff>
+      <Thickness>
+        <double>10.0</double>
+        <double>20.0</double>
+        <double>30.0</double>
+        <double>40.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>50.0</double>
+        <double>20.0</double>
+      </Thickness>
+      <OC>
+        <double>4.7</double>
+        <double>3.2164402071603773</double>
+        <double>0.6082307898023562</double>
+        <double>0.2248245398934235</double>
+        <double>0.20003807614439786</double>
+        <double>0.2000000021975503</double>
+        <double>0.20000000000012685</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+      </OC>
+      <FBiom>
+        <double>0.06926545765453743</double>
+        <double>0.03409553695297617</double>
+        <double>0.015376441019179983</double>
+        <double>0.010658379763921602</double>
+        <double>0.010005102761754524</double>
+        <double>0.010000003378856008</double>
+        <double>0.010000000002237351</double>
+        <double>0.010000000000001482</double>
+        <double>0.010000000000000002</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+      </FBiom>
+      <FInert>
+        <double>0.5696460117874711</double>
+        <double>0.7255941819529867</double>
+        <double>0.8703798696770542</double>
+        <double>0.9546410233552938</double>
+        <double>0.9960067393670222</double>
+        <double>0.9998972433699422</double>
+        <double>0.9999973558137093</double>
+        <double>0.9999999319584426</double>
+        <double>0.9999999982491198</double>
+        <double>0.9999999999549454</double>
+        <double>0.9999999999988407</double>
+        <double>0.9999999999999702</double>
+        <double>0.9999999999999992</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+      </FInert>
+    </SoilOrganicMatter>
+    <Analysis>
+      <Thickness>
+        <double>2000.0</double>
+      </Thickness>
+      <Rocks>
+        <double>0.0</double>
+      </Rocks>
+      <PH>
+        <double>7.0</double>
+      </PH>
+      <CEC>
+        <double>11.979000000000001</double>
+      </CEC>
+      <ParticleSizeSand>
+        <double>88.0</double>
+      </ParticleSizeSand>
+      <ParticleSizeSilt>
+        <double>9.0</double>
+      </ParticleSizeSilt>
+      <ParticleSizeClay>
+        <double>3.0</double>
+      </ParticleSizeClay>
+    </Analysis>
+    <Sample name="Initial nitrogen">
+      <Thickness>
+        <double>2000.0</double>
+      </Thickness>
+      <NO3>
+        <double>20.0</double>
+      </NO3>
+      <NH4>
+        <double>2.9999999999999996</double>
+      </NH4>
+      <NO3Units>kgha</NO3Units>
+      <SWUnits>Volumetric</SWUnits>
+      <OCUnits>Total</OCUnits>
+      <PHUnits>Water</PHUnits>
+    </Sample>
+    <InitialWater name="Initial water">
+      <FractionFull>1</FractionFull>
+      <PercentMethod>FilledFromTop</PercentMethod>
+    </InitialWater>
+    <Swim>
+      <Salb type="text" description="Bare Soil Albedo">0.13</Salb>
+      <CN2Bare type="text" description="Bare Soil Runoff Curve Number">75</CN2Bare>
+      <CNRed type="text" description="Max. Reduction in Curve Number due to cover">20</CNRed>
+      <CNCov type="text" description="Cover for max Curve Number reduction">0.8</CNCov>
+      <KDul type="text" description="Hydraulic Conductivity at DUL (mm/d)">0.1</KDul>
+      <PSIDul type="text" description="Matric Potential at DUL (cm)">-100</PSIDul>
+      <VC type="list" listvalues="on,off" description="Vapour Conductivity Calculations (on/off)">true</VC>
+      <DTmin type="text" description="Minimum Timestep (min)">0.0</DTmin>
+      <DTmax type="text" description="Maximum Timestep (min)">1440.0</DTmax>
+      <MaxWaterIncrement type="text" description="Maximum Water Increment (mm)">10</MaxWaterIncrement>
+      <SpaceWeightingFactor type="text" description="Space Weighting Factor">0</SpaceWeightingFactor>
+      <SoluteSpaceWeightingFactor type="text" description="Solute Space Weighting Factor">0.0</SoluteSpaceWeightingFactor>
+      <Diagnostics type="yesno" description="Diagnostic Information?">false</Diagnostics>
+      <SwimSoluteParameters>
+        <Dis type="text" description="Dispersivity - dis ((cm^2/h)/(cm/h)^p) ">15</Dis>
+        <Disp type="text" description="Dispersivity Power - disp">1</Disp>
+        <A type="text" description="Tortuosity Constant - a">1.0</A>
+        <DTHC type="text" description="Tortuoisty Offset - dthc">0.0</DTHC>
+        <DTHP type="text" description="Tortuoisty Power - dthp">1.0</DTHP>
+        <WaterTableCl type="text" description="Water Table Cl Concentration (ppm)">0</WaterTableCl>
+        <WaterTableNO3 type="text" description="Water Table NO3 Concentration (ppm)">0.0</WaterTableNO3>
+        <WaterTableNH4 type="text" description="Water Table NH4 Concentration (ppm)">0.0</WaterTableNH4>
+        <WaterTableUrea type="text" description="Water Table Urea Concentration (ppm)">0.0</WaterTableUrea>
+        <Thickness>
+          <double>2000.0</double>
+        </Thickness>
+        <ThicknessUnits>mm</ThicknessUnits>
+        <NO3Exco>
+          <double>0.0</double>
+        </NO3Exco>
+        <NO3FIP>
+          <double>1.0</double>
+        </NO3FIP>
+        <NH4Exco>
+          <double>100.0</double>
+        </NH4Exco>
+        <NH4FIP>
+          <double>1.0</double>
+        </NH4FIP>
+        <UreaExco>
+          <double>0.0</double>
+        </UreaExco>
+        <UreaFIP>
+          <double>1.0</double>
+        </UreaFIP>
+        <ClExco>
+          <double>0.0</double>
+        </ClExco>
+        <ClFIP>
+          <double>1.0</double>
+        </ClFIP>
+      </SwimSoluteParameters>
+    </Swim>
+  </Soil>
+  <Soil name="Taupo_97a1">
+    <RecordNumber>-1</RecordNumber>
+    <SoilType>Immature Orthic Pumice Soils</SoilType>
+    <Region>
+    </Region>
+    <State>
+    </State>
+    <Latitude>-41</Latitude>
+    <Longitude>-82</Longitude>
+    <LayerStructure>
+      <Thickness>
+        <double>10.0</double>
+        <double>20.0</double>
+        <double>30.0</double>
+        <double>40.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>50.0</double>
+        <double>20.0</double>
+      </Thickness>
+    </LayerStructure>
+    <Water>
+      <Thickness>
+        <double>2000</double>
+      </Thickness>
+      <BD>
+        <double>1.1592</double>
+      </BD>
+      <AirDry>
+        <double>0.0555</double>
+      </AirDry>
+      <LL15>
+        <double>0.06</double>
+      </LL15>
+      <DUL>
+        <double>0.212</double>
+      </DUL>
+      <SAT>
+        <double>0.54498</double>
+      </SAT>
+      <KS>
+        <double>2400</double>
+      </KS>
+      <SoilCrop name="Ryegrass_Clover">
+        <Thickness>
+          <double>2000</double>
+        </Thickness>
+        <LL>
+          <double>0.06</double>
+        </LL>
+        <KL>
+          <double>0.00022308769589997226</double>
+        </KL>
+        <XF>
+          <double>0.036443214389916538</double>
+        </XF>
+      </SoilCrop>
+    </Water>
+    <SoilOrganicMatter>
+      <RootCN>40</RootCN>
+      <RootWt>1000</RootWt>
+      <SoilCN>11</SoilCN>
+      <EnrACoeff>7.4</EnrACoeff>
+      <EnrBCoeff>0.2</EnrBCoeff>
+      <Thickness>
+        <double>10.0</double>
+        <double>20.0</double>
+        <double>30.0</double>
+        <double>40.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>50.0</double>
+        <double>20.0</double>
+      </Thickness>
+      <OC>
+        <double>4.7</double>
+        <double>3.2164402071603773</double>
+        <double>0.6082307898023562</double>
+        <double>0.2248245398934235</double>
+        <double>0.20003807614439786</double>
+        <double>0.2000000021975503</double>
+        <double>0.20000000000012685</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+      </OC>
+      <FBiom>
+        <double>0.06926545765453743</double>
+        <double>0.03409553695297617</double>
+        <double>0.015376441019179983</double>
+        <double>0.010658379763921602</double>
+        <double>0.010005102761754524</double>
+        <double>0.010000003378856008</double>
+        <double>0.010000000002237351</double>
+        <double>0.010000000000001482</double>
+        <double>0.010000000000000002</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+      </FBiom>
+      <FInert>
+        <double>0.5696460117874711</double>
+        <double>0.7255941819529867</double>
+        <double>0.8703798696770542</double>
+        <double>0.9546410233552938</double>
+        <double>0.9960067393670222</double>
+        <double>0.9998972433699422</double>
+        <double>0.9999973558137093</double>
+        <double>0.9999999319584426</double>
+        <double>0.9999999982491198</double>
+        <double>0.9999999999549454</double>
+        <double>0.9999999999988407</double>
+        <double>0.9999999999999702</double>
+        <double>0.9999999999999992</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+      </FInert>
+    </SoilOrganicMatter>
+    <Analysis>
+      <Thickness>
+        <double>2000.0</double>
+      </Thickness>
+      <Rocks>
+        <double>0.0</double>
+      </Rocks>
+      <PH>
+        <double>7.0</double>
+      </PH>
+      <CEC>
+        <double>11.980000000000002</double>
+      </CEC>
+      <ParticleSizeSand>
+        <double>85.0</double>
+      </ParticleSizeSand>
+      <ParticleSizeSilt>
+        <double>13.0</double>
+      </ParticleSizeSilt>
+      <ParticleSizeClay>
+        <double>2.0</double>
+      </ParticleSizeClay>
+    </Analysis>
+    <Sample name="Initial nitrogen">
+      <Thickness>
+        <double>2000.0</double>
+      </Thickness>
+      <NO3>
+        <double>20.0</double>
+      </NO3>
+      <NH4>
+        <double>2.9999999999999996</double>
+      </NH4>
+      <NO3Units>kgha</NO3Units>
+      <SWUnits>Volumetric</SWUnits>
+      <OCUnits>Total</OCUnits>
+      <PHUnits>Water</PHUnits>
+    </Sample>
+    <InitialWater name="Initial water">
+      <FractionFull>1</FractionFull>
+      <PercentMethod>FilledFromTop</PercentMethod>
+    </InitialWater>
+    <Swim>
+      <Salb type="text" description="Bare Soil Albedo">0.13</Salb>
+      <CN2Bare type="text" description="Bare Soil Runoff Curve Number">75</CN2Bare>
+      <CNRed type="text" description="Max. Reduction in Curve Number due to cover">20</CNRed>
+      <CNCov type="text" description="Cover for max Curve Number reduction">0.8</CNCov>
+      <KDul type="text" description="Hydraulic Conductivity at DUL (mm/d)">0.1</KDul>
+      <PSIDul type="text" description="Matric Potential at DUL (cm)">-100</PSIDul>
+      <VC type="list" listvalues="on,off" description="Vapour Conductivity Calculations (on/off)">true</VC>
+      <DTmin type="text" description="Minimum Timestep (min)">0.0</DTmin>
+      <DTmax type="text" description="Maximum Timestep (min)">1440.0</DTmax>
+      <MaxWaterIncrement type="text" description="Maximum Water Increment (mm)">10</MaxWaterIncrement>
+      <SpaceWeightingFactor type="text" description="Space Weighting Factor">0</SpaceWeightingFactor>
+      <SoluteSpaceWeightingFactor type="text" description="Solute Space Weighting Factor">0.0</SoluteSpaceWeightingFactor>
+      <Diagnostics type="yesno" description="Diagnostic Information?">false</Diagnostics>
+      <SwimSoluteParameters>
+        <Dis type="text" description="Dispersivity - dis ((cm^2/h)/(cm/h)^p) ">15</Dis>
+        <Disp type="text" description="Dispersivity Power - disp">1</Disp>
+        <A type="text" description="Tortuosity Constant - a">1.0</A>
+        <DTHC type="text" description="Tortuoisty Offset - dthc">0.0</DTHC>
+        <DTHP type="text" description="Tortuoisty Power - dthp">1.0</DTHP>
+        <WaterTableCl type="text" description="Water Table Cl Concentration (ppm)">0</WaterTableCl>
+        <WaterTableNO3 type="text" description="Water Table NO3 Concentration (ppm)">0.0</WaterTableNO3>
+        <WaterTableNH4 type="text" description="Water Table NH4 Concentration (ppm)">0.0</WaterTableNH4>
+        <WaterTableUrea type="text" description="Water Table Urea Concentration (ppm)">0.0</WaterTableUrea>
+        <Thickness>
+          <double>2000.0</double>
+        </Thickness>
+        <ThicknessUnits>mm</ThicknessUnits>
+        <NO3Exco>
+          <double>0.0</double>
+        </NO3Exco>
+        <NO3FIP>
+          <double>1.0</double>
+        </NO3FIP>
+        <NH4Exco>
+          <double>100.0</double>
+        </NH4Exco>
+        <NH4FIP>
+          <double>1.0</double>
+        </NH4FIP>
+        <UreaExco>
+          <double>0.0</double>
+        </UreaExco>
+        <UreaFIP>
+          <double>1.0</double>
+        </UreaFIP>
+        <ClExco>
+          <double>0.0</double>
+        </ClExco>
+        <ClFIP>
+          <double>1.0</double>
+        </ClFIP>
+      </SwimSoluteParameters>
+    </Swim>
+  </Soil>
+  <Soil name="Te Toka_8a1">
+    <RecordNumber>-1</RecordNumber>
+    <SoilType>Typic Orthic Pumice Soils</SoilType>
+    <Region>
+    </Region>
+    <State>
+    </State>
+    <Latitude>-41</Latitude>
+    <Longitude>-82</Longitude>
+    <LayerStructure>
+      <Thickness>
+        <double>10.0</double>
+        <double>20.0</double>
+        <double>30.0</double>
+        <double>40.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>50.0</double>
+        <double>20.0</double>
+      </Thickness>
+    </LayerStructure>
+    <Water>
+      <Thickness>
+        <double>2000</double>
+      </Thickness>
+      <BD>
+        <double>0</double>
+      </BD>
+      <AirDry>
+        <double>0.22385000000000002</double>
+      </AirDry>
+      <LL15>
+        <double>0.242</double>
+      </LL15>
+      <DUL>
+        <double>0.43700000000000006</double>
+      </DUL>
+      <SAT>
+        <double>0.60543</double>
+      </SAT>
+      <KS>
+        <double>1920</double>
+      </KS>
+      <SoilCrop name="Ryegrass_Clover">
+        <Thickness>
+          <double>2000</double>
+        </Thickness>
+        <LL>
+          <double>0.242</double>
+        </LL>
+        <KL>
+          <double>0.00022308769589997226</double>
+        </KL>
+        <XF>
+          <double>0.022550455808510915</double>
+        </XF>
+      </SoilCrop>
+    </Water>
+    <SoilOrganicMatter>
+      <RootCN>40</RootCN>
+      <RootWt>1000</RootWt>
+      <SoilCN>11</SoilCN>
+      <EnrACoeff>7.4</EnrACoeff>
+      <EnrBCoeff>0.2</EnrBCoeff>
+      <Thickness>
+        <double>10.0</double>
+        <double>20.0</double>
+        <double>30.0</double>
+        <double>40.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>122.0</double>
+        <double>50.0</double>
+        <double>20.0</double>
+      </Thickness>
+      <OC>
+        <double>4.7</double>
+        <double>3.2164402071603773</double>
+        <double>0.6082307898023562</double>
+        <double>0.2248245398934235</double>
+        <double>0.20003807614439786</double>
+        <double>0.2000000021975503</double>
+        <double>0.20000000000012685</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+        <double>0.2</double>
+      </OC>
+      <FBiom>
+        <double>0.06926545765453743</double>
+        <double>0.03409553695297617</double>
+        <double>0.015376441019179983</double>
+        <double>0.010658379763921602</double>
+        <double>0.010005102761754524</double>
+        <double>0.010000003378856008</double>
+        <double>0.010000000002237351</double>
+        <double>0.010000000000001482</double>
+        <double>0.010000000000000002</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+        <double>0.01</double>
+      </FBiom>
+      <FInert>
+        <double>0.5696460117874711</double>
+        <double>0.7255941819529867</double>
+        <double>0.8703798696770542</double>
+        <double>0.9546410233552938</double>
+        <double>0.9960067393670222</double>
+        <double>0.9998972433699422</double>
+        <double>0.9999973558137093</double>
+        <double>0.9999999319584426</double>
+        <double>0.9999999982491198</double>
+        <double>0.9999999999549454</double>
+        <double>0.9999999999988407</double>
+        <double>0.9999999999999702</double>
+        <double>0.9999999999999992</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+      </FInert>
+    </SoilOrganicMatter>
+    <Analysis>
+      <Thickness>
+        <double>2000.0</double>
+      </Thickness>
+      <Rocks>
+        <double>0.0</double>
+      </Rocks>
+      <PH>
+        <double>7.0</double>
+      </PH>
+      <CEC>
+        <double>17.19</double>
+      </CEC>
+      <ParticleSizeSand>
+        <double>55.0</double>
+      </ParticleSizeSand>
+      <ParticleSizeSilt>
+        <double>27.0</double>
+      </ParticleSizeSilt>
+      <ParticleSizeClay>
+        <double>18.0</double>
+      </ParticleSizeClay>
+    </Analysis>
+    <Sample name="Initial nitrogen">
+      <Thickness>
+        <double>2000.0</double>
+      </Thickness>
+      <NO3>
+        <double>20.0</double>
+      </NO3>
+      <NH4>
+        <double>2.9999999999999996</double>
+      </NH4>
+      <NO3Units>kgha</NO3Units>
+      <SWUnits>Volumetric</SWUnits>
+      <OCUnits>Total</OCUnits>
+      <PHUnits>Water</PHUnits>
+    </Sample>
+    <InitialWater name="Initial water">
+      <FractionFull>1</FractionFull>
+      <PercentMethod>FilledFromTop</PercentMethod>
+    </InitialWater>
+    <Swim>
+      <Salb type="text" description="Bare Soil Albedo">0.13</Salb>
+      <CN2Bare type="text" description="Bare Soil Runoff Curve Number">75</CN2Bare>
+      <CNRed type="text" description="Max. Reduction in Curve Number due to cover">20</CNRed>
+      <CNCov type="text" description="Cover for max Curve Number reduction">0.8</CNCov>
+      <KDul type="text" description="Hydraulic Conductivity at DUL (mm/d)">0.1</KDul>
+      <PSIDul type="text" description="Matric Potential at DUL (cm)">-100</PSIDul>
+      <VC type="list" listvalues="on,off" description="Vapour Conductivity Calculations (on/off)">true</VC>
+      <DTmin type="text" description="Minimum Timestep (min)">0.0</DTmin>
+      <DTmax type="text" description="Maximum Timestep (min)">1440.0</DTmax>
+      <MaxWaterIncrement type="text" description="Maximum Water Increment (mm)">10</MaxWaterIncrement>
+      <SpaceWeightingFactor type="text" description="Space Weighting Factor">0</SpaceWeightingFactor>
+      <SoluteSpaceWeightingFactor type="text" description="Solute Space Weighting Factor">0.0</SoluteSpaceWeightingFactor>
+      <Diagnostics type="yesno" description="Diagnostic Information?">false</Diagnostics>
+      <SwimSoluteParameters>
+        <Dis type="text" description="Dispersivity - dis ((cm^2/h)/(cm/h)^p) ">15</Dis>
+        <Disp type="text" description="Dispersivity Power - disp">1</Disp>
+        <A type="text" description="Tortuosity Constant - a">1.0</A>
+        <DTHC type="text" description="Tortuoisty Offset - dthc">0.0</DTHC>
+        <DTHP type="text" description="Tortuoisty Power - dthp">1.0</DTHP>
+        <WaterTableCl type="text" description="Water Table Cl Concentration (ppm)">0</WaterTableCl>
+        <WaterTableNO3 type="text" description="Water Table NO3 Concentration (ppm)">0.0</WaterTableNO3>
+        <WaterTableNH4 type="text" description="Water Table NH4 Concentration (ppm)">0.0</WaterTableNH4>
+        <WaterTableUrea type="text" description="Water Table Urea Concentration (ppm)">0.0</WaterTableUrea>
+        <Thickness>
+          <double>2000.0</double>
+        </Thickness>
+        <ThicknessUnits>mm</ThicknessUnits>
+        <NO3Exco>
+          <double>0.0</double>
+        </NO3Exco>
+        <NO3FIP>
+          <double>1.0</double>
+        </NO3FIP>
+        <NH4Exco>
+          <double>100.0</double>
+        </NH4Exco>
+        <NH4FIP>
+          <double>1.0</double>
+        </NH4FIP>
+        <UreaExco>
+          <double>0.0</double>
+        </UreaExco>
+        <UreaFIP>
+          <double>1.0</double>
+        </UreaFIP>
+        <ClExco>
+          <double>0.0</double>
+        </ClExco>
+        <ClFIP>
+          <double>1.0</double>
+        </ClFIP>
+      </SwimSoluteParameters>
+    </Swim>
+  </Soil>
+</folder>
