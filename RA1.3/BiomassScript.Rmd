@@ -1,0 +1,665 @@
+---
+title: "BiomassScript"
+output:
+  html_document: default
+  html_notebook: default
+---
+
+This script is written to provide a quick check of biomass harvest data from Baxters block.  
+There are 2 sections:  
+1. General correlations/checks  
+2. Treatment means  
+
+***
+
+```{r Reading data, include=FALSE}
+# load readxl library
+library(readxl)
+
+# read column headers
+header <- read_excel("K:/CPDiary/Data/BaxtersMVI/Biomass.xlsx", skip = 12, col_names = FALSE, n_max = 1)
+
+# read data so we get correct col types (without interference from units)
+harvestData <- read_excel("K:/CPDiary/Data/BaxtersMVI/Biomass.xlsx", skip = 14, col_names = FALSE, n_max = 24)
+
+# combine headers and data
+names(harvestData) <- header
+
+# print data and summarise
+print(harvestData)
+str(harvestData)
+
+# change data types ## add to this as I go...not sure if character or factor are better in this case
+harvestData$Plot <- as.character(harvestData$Plot)
+harvestData$Rep <- as.factor(harvestData$Rep)
+harvestData$Irr_Num <- as.character(harvestData$Irr_Num)
+harvestData$Zone_ID <- as.factor(harvestData$Zone_ID)
+
+summary(harvestData)
+names(harvestData)
+
+## remove redundant columns???
+
+# store column headers with units in tibble for later reference
+headerUnits <- read_excel("K:/CPDiary/Data/BaxtersMVI/Biomass.xlsx", n_max = 1, 
+                            skip = 12, col_names = TRUE)
+```
+
+```{r, include=FALSE}
+# select harvest no. and display date 
+library(dplyr)
+harvestData <- harvestData  %>%
+  filter(Harvest_Num == "H1") ### CHANGE THIS FILTER FOR EACH HARVEST 
+```
+
+Data displayed is from `r harvestData$Harvest_Num[1]`, harvested on `r harvestData$Harvest_Date[1]`.  
+
+***  
+<br>
+<br>
+  
+## Correlations and checks  
+
+```{r libraries and levels for correlations, include=FALSE}
+library(ggplot2)
+library(car)
+library(gridExtra)
+
+# set order of Zone_ID
+levels(harvestData$Zone_ID)
+harvestData$Zone_ID <- factor(harvestData$Zone_ID, levels = c("Low", "Mid", "High"))
+levels(harvestData$Zone_ID)
+```
+
+<br>
+  
+### Number of samples  
+
+```{r, echo=FALSE}
+# checking number of samples
+ggplot(data = harvestData, aes(Rep)) +
+  geom_bar(aes(colour=Irr_Num)) +
+  facet_grid(~Zone_ID) +
+  scale_y_continuous(breaks = seq(0, 10, 1)) + # making sure dimensions are available in case data wrong 
+  theme_bw() +
+  theme(axis.line=element_line(),
+        panel.grid.minor=element_blank(),
+        panel.grid.major.x=element_blank())
+```
+
+
+<br>
+  
+### Calculation checks  
+
+```{r, echo=FALSE}
+# calculations - expecting 1:1 relationships
+plot1 <- ggplot(data = harvestData, aes(x = Biomass_Yield_Harvest_Moist, y = Whole_Sample_FW)) +
+  geom_point() +
+  theme_bw() +
+  theme(panel.border=element_blank(),
+        axis.line=element_line(),
+        panel.grid.minor=element_blank(),
+        panel.grid.major.x=element_blank())
+harvestData$Sum_Component_Yields <- (harvestData$Green_Leaf_Yield + harvestData$Stem_Yield + harvestData$Dead_Leaf_Yield + harvestData$Ear_Yield)
+plot2 <- ggplot(data = harvestData, aes(x = Total_Biomass_Dry, y = Sum_Component_Yields)) +
+  geom_point() +
+  theme_bw() +
+  theme(panel.border=element_blank(),
+        axis.line=element_line(),
+        panel.grid.minor=element_blank(),
+        panel.grid.major.x=element_blank())
+grid.arrange(plot1, plot2, ncol = 2)
+```
+
+
+<br>
+  
+### Yield component correlations  
+
+```{r, echo=FALSE}
+# yield components
+scatterplotMatrix(harvestData[c("Total_Biomass_Dry", "Green_Leaf_Yield", "Stem_Yield", 
+                                "Dead_Leaf_Yield", "Ear_Yield")],
+                  diagonal = "none",  smoother = FALSE, reg.line = FALSE,
+                  groups = harvestData$Zone_ID, by.groups = TRUE,
+                  legend.pos = "bottomright")
+```
+
+<br>
+  
+### Leaf area correlations  
+
+```{r, echo=FALSE}
+# leaf area
+scatterplotMatrix(harvestData[c("Whole_Sample_FW", "Green_leaf_area", "LAI", 
+                                "Green_Leaf_Yield")],
+                  diagonal = "none",  smoother = FALSE, reg.line = FALSE,
+                  groups = harvestData$Zone_ID, by.groups = TRUE,
+                  legend.pos = "bottomright")
+
+```
+
+<br>
+  
+### Green leaf correlations  
+
+```{r, echo=FALSE}
+# green leaf
+scatterplotMatrix(harvestData[c("Whole_Sample_FW",  "Leaf_FWT", "Green_leaf_DW",
+                                 "Green_Leaf_Yield", "Total_Biomass_Dry")], 
+                  diagonal = "none",  smoother = FALSE, reg.line = FALSE,
+                  groups = harvestData$Zone_ID, by.groups = TRUE,
+                  legend.pos = "bottomright")
+```
+
+<br>
+  
+### Dead leaf correlations  
+
+```{r, echo=FALSE}
+# dead leaf
+scatterplotMatrix(harvestData[c("Whole_Sample_FW",  "Dead_leaf_FW", "Dead_leaf_DW",               
+                                "Dead_Leaf_Yield", "Total_Biomass_Dry")], 
+                  diagonal = "none",  smoother = FALSE, reg.line = FALSE,
+                  groups = harvestData$Zone_ID, by.groups = TRUE,
+                  legend.pos = "bottomright")
+```
+
+<br>
+  
+### Stem correlations  
+
+```{r, echo=FALSE}
+# stem
+scatterplotMatrix(harvestData[c("Whole_Sample_FW",  "Stem_FW", "Stem_DW", "Stem_Yield",
+                                "Total_Biomass_Dry")], 
+                  diagonal = "none",  smoother = FALSE, reg.line = FALSE,
+                  groups = harvestData$Zone_ID, by.groups = TRUE,
+                  legend.pos = "bottomright")
+
+```
+
+<br>
+  
+### Ear correlations  
+
+```{r, echo=FALSE}
+# ear
+scatterplotMatrix(harvestData[c("Whole_Sample_FW",  "Ear_FW", "Ear_DW", "Ear_Yield",
+                                "Total_Biomass_Dry")], 
+                  diagonal = "none",  smoother = FALSE, reg.line = FALSE,
+                  groups = harvestData$Zone_ID, by.groups = TRUE,
+                  legend.pos = "bottomright") 
+```
+
+
+<br>
+<br>
+  
+## Treatment means  
+
+```{r libraries and levels for treatment means, include=FALSE}
+library(ggplot2)
+library(dplyr)
+
+# set order of Zone_ID
+levels(harvestData$Zone_ID)
+harvestData$Zone_ID <- factor(harvestData$Zone_ID, levels = c("Low", "Mid", "High"))
+levels(harvestData$Zone_ID)
+```
+<br>
+  
+### FW of samples (g) across zones and irrig  
+```{r, echo=FALSE}
+ggplot(data = harvestData, aes(x = Zone_ID, y = Whole_Sample_FW)) + 
+  geom_boxplot() + 
+  geom_point(aes(colour = Irr_Num)) +
+  theme_bw() +
+  theme(panel.border=element_blank(),
+        axis.line=element_line(),
+        panel.grid.minor=element_blank(),
+        panel.grid.major.x=element_blank())
+```
+<br>
+<br>
+  
+### Total DM (kg/ha) across zones and irrig 
+  
+#### Grouped by zone  
+```{r, echo=FALSE}
+harvestData %>% 
+  group_by(Zone_ID) %>% 
+  summarise(N=length(Total_Biomass_Dry),
+      mean=mean(Total_Biomass_Dry),
+      min=min(Total_Biomass_Dry),
+      max=max(Total_Biomass_Dry),
+      med=median(Total_Biomass_Dry),
+      sd=sd(Total_Biomass_Dry),
+      se=sd/sqrt(N))
+ggplot(data = harvestData, aes(x = Zone_ID, y = Total_Biomass_Dry)) + 
+  geom_boxplot() + 
+  geom_point(aes(colour = Irr_Num)) +
+  theme_bw() +
+  theme(panel.border=element_blank(),
+        axis.line=element_line(),
+        panel.grid.minor=element_blank(),
+        panel.grid.major.x=element_blank())
+```
+
+#### Grouped by irrig  
+```{r, echo=FALSE}
+harvestData %>% 
+  group_by(Irr_Num) %>% 
+  summarise(N=length(Total_Biomass_Dry),
+      mean=mean(Total_Biomass_Dry),
+      min=min(Total_Biomass_Dry),
+      max=max(Total_Biomass_Dry),
+      med=median(Total_Biomass_Dry),
+      sd=sd(Total_Biomass_Dry),
+      se=sd/sqrt(N))
+ggplot(data = harvestData, aes(x = Irr_Num, y = Total_Biomass_Dry)) + 
+  geom_boxplot() + 
+  geom_point(aes(colour = Zone_ID)) +
+  theme_bw() +
+  theme(panel.border=element_blank(),
+        axis.line=element_line(),
+        panel.grid.minor=element_blank(),
+        panel.grid.major.x=element_blank())
+```
+
+#### Grouped by zone and irrig  
+```{r, echo=FALSE}
+TotalBiomasssummary <- harvestData %>% 
+  group_by(Zone_ID, Irr_Num) %>% 
+  summarise(N=length(Total_Biomass_Dry),
+      mean=mean(Total_Biomass_Dry),
+      min=min(Total_Biomass_Dry),
+      max=max(Total_Biomass_Dry),
+      med=median(Total_Biomass_Dry),
+      sd=sd(Total_Biomass_Dry),
+      se=sd/sqrt(N),
+      ymax=mean+se,
+      ymin=mean-se)
+print(TotalBiomasssummary)
+pd <- position_dodge(0.1)
+ggplot(data = TotalBiomasssummary, aes(x = Zone_ID, y = mean)) + 
+  geom_point(aes(colour = Irr_Num), position = pd) +
+  geom_errorbar(aes(ymax = ymax, ymin = ymin, colour = Irr_Num), width = 0.1, position = pd) +
+  labs(y = "mean total biomass") +
+  theme_bw() +
+  theme(panel.border=element_blank(),
+        axis.line=element_line(),
+        panel.grid.minor=element_blank(),
+        panel.grid.major.x=element_blank())
+```
+
+
+<br>
+<br>
+  
+### LAI across zones and irrig  
+```{r, echo=FALSE}
+ggplot(data = harvestData, aes(x = Zone_ID, y = LAI)) + 
+  geom_point(aes(colour = Irr_Num)) +
+  facet_grid(~ Irr_Num) +
+  theme_bw() +
+  theme(axis.line=element_line(),
+        panel.grid.minor=element_blank(),
+        panel.grid.major.x=element_blank())
+
+LAIsummary <- harvestData %>% 
+  group_by(Zone_ID, Irr_Num) %>% 
+  summarise(N=length(LAI),
+      mean=mean(LAI),
+      min=min(LAI),
+      max=max(LAI),
+      med=median(LAI),
+      sd=sd(LAI),
+      se=sd/sqrt(N),
+      ymax=mean+se,
+      ymin=mean-se)
+print(LAIsummary)
+pd <- position_dodge(0.1)
+ggplot(data = LAIsummary, aes(x = Zone_ID, y = mean)) + 
+  geom_point(aes(colour = Irr_Num), position = pd) +
+  geom_errorbar(aes(ymax = ymax, ymin = ymin, colour = Irr_Num), width = 0.1, position = pd) +
+  labs(y = "mean LAI") +
+  theme_bw() +
+  theme(panel.border=element_blank(),
+        axis.line=element_line(),
+        panel.grid.minor=element_blank(),
+        panel.grid.major.x=element_blank())
+```
+
+<br>
+<br>
+  
+### Green leaf yield across zones and irrig  
+```{r, echo=FALSE}
+ggplot(data = harvestData, aes(x = Zone_ID, y = Green_Leaf_Yield)) + 
+  geom_point(aes(colour = Irr_Num)) +
+  facet_grid(~ Irr_Num) +
+  theme_bw() +
+  theme(axis.line=element_line(),
+        panel.grid.minor=element_blank(),
+        panel.grid.major.x=element_blank())
+
+GreenLeafsummary <- harvestData %>% 
+  group_by(Zone_ID, Irr_Num) %>% 
+  summarise(N=length(Green_Leaf_Yield),
+      mean=mean(Green_Leaf_Yield),
+      min=min(Green_Leaf_Yield),
+      max=max(Green_Leaf_Yield),
+      med=median(Green_Leaf_Yield),
+      sd=sd(Green_Leaf_Yield),
+      se=sd/sqrt(N),
+      ymax=mean+se,
+      ymin=mean-se)
+print(GreenLeafsummary)
+pd <- position_dodge(0.1)
+ggplot(data = GreenLeafsummary, aes(x = Zone_ID, y = mean)) + 
+  geom_point(aes(colour = Irr_Num), position = pd) +
+  geom_errorbar(aes(ymax = ymax, ymin = ymin, colour = Irr_Num), width = 0.1, position = pd) +
+  labs(y = "mean green leaf yield") +
+  theme_bw() +
+  theme(panel.border=element_blank(),
+        axis.line=element_line(),
+        panel.grid.minor=element_blank(),
+        panel.grid.major.x=element_blank())
+```
+
+<br>
+<br>
+  
+### Dead leaf yield across zones and irrig  
+```{r, echo=FALSE}
+ggplot(data = harvestData, aes(x = Zone_ID, y = Dead_Leaf_Yield)) + 
+  geom_point(aes(colour = Irr_Num)) +
+  facet_grid(~ Irr_Num) +
+  theme_bw() +
+  theme(axis.line=element_line(),
+        panel.grid.minor=element_blank(),
+        panel.grid.major.x=element_blank())
+
+DeadLeafsummary <- harvestData %>% 
+  group_by(Zone_ID, Irr_Num) %>% 
+  summarise(N=length(Dead_Leaf_Yield),
+      mean=mean(Dead_Leaf_Yield),
+      min=min(Dead_Leaf_Yield),
+      max=max(Dead_Leaf_Yield),
+      med=median(Dead_Leaf_Yield),
+      sd=sd(Dead_Leaf_Yield),
+      se=sd/sqrt(N),
+      ymax=mean+se,
+      ymin=mean-se)
+print(DeadLeafsummary)
+pd <- position_dodge(0.1)
+ggplot(data = DeadLeafsummary, aes(x = Zone_ID, y = mean)) + 
+  geom_point(aes(colour = Irr_Num), position = pd) +
+  geom_errorbar(aes(ymax = ymax, ymin = ymin, colour = Irr_Num), width = 0.1, position = pd) +
+  labs(y = "mean dead leaf yield") +
+  theme_bw() +
+  theme(panel.border=element_blank(),
+        axis.line=element_line(),
+        panel.grid.minor=element_blank(),
+        panel.grid.major.x=element_blank())
+```
+
+<br>
+<br>
+  
+### Stem yield across zones and irrig  
+```{r, echo=FALSE}
+ggplot(data = harvestData, aes(x = Zone_ID, y = Stem_Yield)) + 
+  geom_point(aes(colour = Irr_Num)) +
+  facet_grid(~ Irr_Num) +
+  theme_bw() +
+  theme(axis.line=element_line(),
+        panel.grid.minor=element_blank(),
+        panel.grid.major.x=element_blank())
+
+Stemsummary <- harvestData %>% 
+  group_by(Zone_ID, Irr_Num) %>% 
+  summarise(N=length(Stem_Yield),
+      mean=mean(Stem_Yield),
+      min=min(Stem_Yield),
+      max=max(Stem_Yield),
+      med=median(Stem_Yield),
+      sd=sd(Stem_Yield),
+      se=sd/sqrt(N),
+      ymax=mean+se,
+      ymin=mean-se)
+print(Stemsummary)
+pd <- position_dodge(0.1)
+ggplot(data = Stemsummary, aes(x = Zone_ID, y = mean)) + 
+  geom_point(aes(colour = Irr_Num), position = pd) +
+  geom_errorbar(aes(ymax = ymax, ymin = ymin, colour = Irr_Num), width = 0.1, position = pd) +
+  labs(y = "mean stem yield") +
+  theme_bw() +
+  theme(panel.border=element_blank(),
+        axis.line=element_line(),
+        panel.grid.minor=element_blank(),
+        panel.grid.major.x=element_blank())
+```
+
+<br>
+<br>
+  
+### Ear yield across zones and irrig  
+```{r, echo=FALSE}
+ggplot(data = harvestData, aes(x = Zone_ID, y = Ear_Yield)) + 
+  geom_point(aes(colour = Irr_Num)) +
+  facet_grid(~ Irr_Num) +
+  theme_bw() +
+  theme(axis.line=element_line(),
+        panel.grid.minor=element_blank(),
+        panel.grid.major.x=element_blank())
+
+Earsummary <- harvestData %>% 
+  group_by(Zone_ID, Irr_Num) %>% 
+  summarise(N=length(Ear_Yield),
+      mean=mean(Ear_Yield),
+      min=min(Ear_Yield),
+      max=max(Ear_Yield),
+      med=median(Ear_Yield),
+      sd=sd(Ear_Yield),
+      se=sd/sqrt(N),
+      ymax=mean+se,
+      ymin=mean-se)
+print(Earsummary)
+pd <- position_dodge(0.1)
+ggplot(data = Earsummary, aes(x = Zone_ID, y = mean)) + 
+  geom_point(aes(colour = Irr_Num), position = pd) +
+  geom_errorbar(aes(ymax = ymax, ymin = ymin, colour = Irr_Num), width = 0.1, position = pd) +
+  labs(y = "mean ear yield") +
+  theme_bw() +
+  theme(panel.border=element_blank(),
+        axis.line=element_line(),
+        panel.grid.minor=element_blank(),
+        panel.grid.major.x=element_blank())
+```
+
+
+
+
+
+
+```{r Extras for treatment means, eval=FALSE, include=FALSE}
+
+# visualise no. of plots
+ggplot(data = harvestData, aes(Rep)) +
+  geom_bar(aes(colour=Irr_Num)) +
+  facet_grid(~Zone_ID)
+
+
+# total biomass boxplot with n=4
+ggplot(data = harvestData, aes(x = Zone_ID, y = Total_Biomass_Dry)) + 
+  geom_boxplot(aes(colour = Irr_Num))
+
+# total biomass scatter plot version which may be better
+ggplot(data = harvestData, aes(x = Zone_ID, y = Total_Biomass_Dry)) + 
+  geom_point(aes(colour = Irr_Num)) +
+  facet_grid(~ Irr_Num)
+
+
+# LAI boxplot with n=4
+ggplot(data = harvestData, aes(x = Zone_ID, y = LAI)) + 
+  geom_boxplot(aes(colour = Irr_Num))
+
+ggplot(data = harvestData, aes(x = Irr_Num, y = LAI)) + 
+  geom_boxplot(aes(colour = Zone_ID))
+
+# LAI scatter to add back in once there's expected STD vs VRI differences
+ggplot(data = harvestData, aes(x = Irr_Num, y = LAI)) + 
+  geom_point(aes(colour = Zone_ID)) +
+  facet_grid(~ Zone_ID)
+
+# LAI boxplot version that may be better than scatters?
+ggplot(data = harvestData, aes(x = Zone_ID, y = LAI)) + 
+  geom_boxplot() + 
+  geom_point(aes(colour = Irr_Num))
+
+
+```
+
+
+
+
+
+```{r Scraps, eval=FALSE, include=FALSE}
+library(readxl)
+harvest <- read_excel("K:/CPDiary/Data/BaxtersMVI/Biomass.xlsx", skip = 12, col_names = TRUE,
+                      col_types = c("date", "text", "numeric", rep("text", 3), rep("numeric", 39)))
+
+head(harvest)
+
+harvest <- read_excel("K:/CPDiary/Data/BaxtersMVI/Biomass.xlsx", skip = 12, col_names = TRUE)
+str(harvest)
+
+
+trial <- read_excel("K:/CPDiary/Data/BaxtersMVI/Biomass.xlsx", col_names = FALSE)
+head(trial, 20)
+
+
+#read header and row of units
+
+header <- sapply(read_excel("K:/CPDiary/Data/BaxtersMVI/Biomass.xlsx", nrows = 2, 
+                            skip = 12),paste,collapse="_")
+result <- setNames(read_excel("K:/CPDiary/Data/BaxtersMVI/Biomass.xlsx", skip = 14, header = FALSE), nm)
+
+test <- read_excel("K:/CPDiary/Data/BaxtersMVI/Biomass.xlsx",skip=14)
+
+head(result,2)
+
+setNames( 1:3, c("foo", "bar", "baz") )
+
+tmp <- 1:3
+names(tmp) <-  c("foo", "bar", "baz")
+tmp
+
+ma <- matrix(1:12, 3, 4)
+nrow(ma)   # 3
+ncol(ma)   # 4
+
+path <- readxl_example("geometry.xls")
+read_excel(path)
+read_excel(path, range = "B3:D6")
+read_excel(path, range = "C3:D5")
+read_excel(path, range = "A3:D5")
+read_excel(path, range = "A4:E5")
+read_excel(path, range = "C5:E7")
+read_excel(path, range = anchored("C4", dim = c(3, 2)), col_names = FALSE)
+
+
+header <- sapply(read_excel("K:/CPDiary/Data/BaxtersMVI/Biomass.xlsx", n_max = 2, 
+                            skip = 12, col_names = FALSE),paste,collapse="_")
+
+names(data) <- headers
+
+
+
+
+
+
+
+
+# library(GGally)
+# ggpairs(harvestData[c("Whole_Sample_FW", "Biomass_Yield_Harvest_Moist",
+#                                 "Total_Biomass_Dry","Green_leaf_area", "LAI", 
+#                                 "Green_Leaf_Yield", "Stem_Yield", "Dead_Leaf_Yield", "Ear_Yield")])
+
+# ggpairs(harvestData[c("Whole_Sample_FW",  "Ear_FW", "Ear_DW", "Ear_Yield",
+#                                 "Total_Biomass_Dry")], 
+#        # mapping = aes(colour = Zone_ID)) # this part not working
+
+# legend(10,20, pch=c(3,2), col=c("red", "blue","green"), c("Low", "Mid","High"), bty="o", cex=.8, box.col="darkgreen")
+
+
+ggplot(data = harvestData, aes(x = Green_Leaf_Yield, y = Green_leaf_area)) +
+  geom_point()
+ggplot(data = harvestData, aes(x = Green_Leaf_Yield, y = LAI)) +
+  geom_point()
+
+ggplot(data = harvestData, aes(x = Green_leaf_area, y = LAI)) +
+  geom_point()
+ggplot(data = harvestData, aes(x = Partitioning_Total_FW, y = LAI)) +
+  geom_point()
+ggplot(data = harvestData, aes(x = Whole_Sample_FW, y = LAI)) +
+  geom_point()
+ggplot(data = harvestData, aes(x = Green_leaf_area, y = Leaf_FWT)) +
+  geom_point()
+
+ggplot(data = harvestData, aes(x = Green_Leaf_Yield, y = Total_Biomass_Dry)) +
+  geom_point()
+ggplot(data = harvestData, aes(x = LAI, y = Total_Biomass_Dry)) +
+  geom_point()
+
+coef(lm(Green_Leaf_Yield ~ Leaf_FWT, data = harvestData))
+ggplot(data = harvestData, aes(x = Leaf_FWT, y = Green_Leaf_Yield)) +
+  geom_point() +
+  geom_abline(intercept = 1685.31494, slope = -37.63116)
+ggplot(data = harvestData, aes(x = Green_leaf_DW, y = Green_Leaf_Yield)) +
+  geom_point() +
+  geom_smooth(method = lm, se = FALSE)
+ggplot(data = harvestData, aes(x = Stem_FW, y = Stem_Yield)) +
+  geom_point() 
+ggplot(data = harvestData, aes(x = Stem_DW, y = Stem_Yield)) +
+  geom_point()
+ggplot(data = harvestData, aes(x = Dead_leaf_FW, y = Dead_Leaf_Yield)) +
+  geom_point() 
+ggplot(data = harvestData, aes(x = Dead_leaf_DW, y = Dead_Leaf_Yield)) +
+  geom_point()
+ggplot(data = harvestData, aes(x = Ear_FW, y = Ear_Yield)) +
+  geom_point() 
+ggplot(data = harvestData, aes(x = Ear_DW, y = Ear_Yield)) +
+  geom_point() 
+
+ggplot(data = harvestData, aes(x = Green_Leaf_Yield, y = Dead_Leaf_Yield)) +
+  geom_point()
+ggplot(data = harvestData, aes(x = Green_Leaf_Yield, y = Stem_Yield)) +
+  geom_point()
+ggplot(data = harvestData, aes(x = Green_Leaf_Yield, y = Ear_Yield)) +
+  geom_point()
+ggplot(data = harvestData, aes(x = Stem_Yield, y = Ear_Yield)) +
+  geom_point()
+
+
+
+ggplot(data = harvestData, aes(x = Biomass_Yield_Harvest_Moist, y = Total_Biomass_Dry)) +
+  geom_point()
+
+#checking calculations, expect exact 1:1 relationship
+ggplot(data = harvestData, aes(x = Biomass_Yield_Harvest_Moist, y = Whole_Sample_FW)) +
+  geom_point()
+
+#additional column for summing component kgDM/ha to determine equivalence to Total_Biomass_Yield
+harvestData$Sum_Component_Yields <- (harvestData$Green_Leaf_Yield + harvestData$Stem_Yield + harvestData$Dead_Leaf_Yield + harvestData$Ear_Yield)
+ggplot(data = harvestData, aes(x = Total_Biomass_Dry, y = Sum_Component_Yields)) +
+  geom_point() +
+  geom_line()
+
+
+```
+
+
