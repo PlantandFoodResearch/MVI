@@ -20,7 +20,7 @@ library(readxl)
 header <- read_excel("K:/CPDiary/Data/BaxtersMVI/Biomass.xlsx", skip = 12, col_names = FALSE, n_max = 1)
 
 # read data so we get correct col types (without interference from units)
-harvestData <- read_excel("K:/CPDiary/Data/BaxtersMVI/Biomass.xlsx", skip = 14, col_names = FALSE, n_max = 24)
+harvestData <- read_excel("K:/CPDiary/Data/BaxtersMVI/Biomass.xlsx", skip = 14, col_names = FALSE)
 
 # combine headers and data
 names(harvestData) <- header
@@ -49,7 +49,7 @@ headerUnits <- read_excel("K:/CPDiary/Data/BaxtersMVI/Biomass.xlsx", n_max = 1,
 # select harvest no. and display date 
 library(dplyr)
 harvestData <- harvestData  %>%
-  filter(Harvest_Num == "H1") ### CHANGE THIS FILTER FOR EACH HARVEST 
+  filter(Harvest_Num == "H2") ### CHANGE THIS FILTER FOR EACH HARVEST 
 ```
 
 Data displayed is from `r harvestData$Harvest_Num[1]`, harvested on `r harvestData$Harvest_Date[1]`.  
@@ -528,6 +528,10 @@ ggplot(data = harvestData, aes(x = Zone_ID, y = LAI)) +
 
 
 ```{r Scraps, eval=FALSE, include=FALSE}
+str(harvestData)
+
+
+
 library(readxl)
 harvest <- read_excel("K:/CPDiary/Data/BaxtersMVI/Biomass.xlsx", skip = 12, col_names = TRUE,
                       col_types = c("date", "text", "numeric", rep("text", 3), rep("numeric", 39)))
