@@ -49,7 +49,7 @@ headerUnits <- read_excel("K:/CPDiary/Data/BaxtersMVI/Biomass.xlsx", n_max = 1,
 # select harvest no. and display date 
 library(dplyr)
 harvestData <- harvestData  %>%
-  filter(Harvest_Num == "H2") ### CHANGE THIS FILTER FOR EACH HARVEST 
+  filter(Harvest_Num == "H3") ### CHANGE THIS FILTER FOR EACH HARVEST 
 ```
 
 Data displayed is from `r harvestData$Harvest_Num[1]`, harvested on `r harvestData$Harvest_Date[1]`.  
@@ -580,11 +580,6 @@ header <- sapply(read_excel("K:/CPDiary/Data/BaxtersMVI/Biomass.xlsx", n_max = 2
                             skip = 12, col_names = FALSE),paste,collapse="_")
 
 names(data) <- headers
-
-
-
-
-
 
 
 
